@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">SavolJavob</string>
+    <string name="question_text">2*2=6?</string>
+    <string name="true_button">Haqiqat!</string>
+    <string name="false_button">Yolg\'on!</string>
+    <string name="correct_toast">Rost gap!</string>
+    <string name="incorrect_toast">Bo\'magan gap!</string>
 </resources>
