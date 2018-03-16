@@ -1,8 +1,15 @@
 <resources>
     <string name="app_name">SavolJavob</string>
-    <string name="question_text">2*2=6?</string>
-    <string name="true_button">Haqiqat!</string>
+    <!--<string name="question_text">2*2=6?</string>-->
+    <string name="question_s1">2*2=6?</string>
+    <string name="question_s2">2*2=6?</string>
+    <string name="question_s3">2*2=6?</string>
+    <string name="question_s4">2*2=6?</string>
+    <string name="question_s5">2*2=6?</string>
+
+    <string name="true_button">Ishonaman!</string>
     <string name="false_button">Yolg\'on!</string>
+    <string name="next_button"> -> </string>
     <string name="correct_toast">Rost gap!</string>
     <string name="incorrect_toast">Bo\'magan gap!</string>
 </resources>
