@@ -16,7 +16,7 @@ public class QuizActivity extends AppCompatActivity {
     private TextView mQuestionTextView;
 
     // Добавление перемменных и массива Question(QuizActivitz.java)
-    private Question[] mQuestionsBank = new Question[] {
+    private Question[] mQuestionBank = new Question[] {
             //Программа несколько раз вызывает конструктор Question и создает массив
             // объектов Question.
             new Question(R.string.question_s1, true),
@@ -36,8 +36,8 @@ public class QuizActivity extends AppCompatActivity {
 
         /* Подключение виджета TextView */
         mQuestionTextView = (TextView) findViewById(R.id.question_text_view);
-        int question = mQuestionsBank[mCurrentIndex].getTextResId();
-        mQuestionTextView.setText(question);
+        //int question = mQuestionBank[mCurrentIndex].getTextResId();
+        //mQuestionTextView.setText(question);
 
         // Получение ссылок на виджеты 1
         mTrueButton = (Button) findViewById(R.id.true_button);
@@ -51,6 +51,8 @@ public class QuizActivity extends AppCompatActivity {
             }
         });
 
+
+
         // Получение ссылок на виджеты 2
         mFalseButton = (Button)findViewById(R.id.false_button);
         mFalseButton.setOnClickListener(new View.OnClickListener() {
@@ -62,5 +64,23 @@ public class QuizActivity extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show();
             }
         });
+
+        // Подключение новой кнопки
+        mNextButton = (Button) findViewById(R.id.next_button);
+        mNextButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
+                //int question = mQuestionBank[mCurrentIndex].getTextResId();
+                //mQuestionTextView.setText(question);
+                updateQuestion();
+            }
+        });
+
+        updateQuestion();
+    }
+    private void updateQuestion() {
+        int question = mQuestionBank[mCurrentIndex].getTextResId();
+        mQuestionTextView.setText(question);
     }
 }
